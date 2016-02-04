@@ -46,6 +46,11 @@ $endif$
 \setlength{\marginparsep}{7pt}
 \reversemarginpar
 
+% BIBLIOGRAPHY
+%--------------------------------
+\usepackage[style=numeric]{biblatex}
+\bibliography{mypubs}
+
 % HEADINGS
 %--------------------------------
 \usepackage{sectsty} 
@@ -99,13 +104,31 @@ $endfor$
 \end{multicols}
 $endif$
 
-\vspace{30pt}
+\vspace{25pt}
 
-$if(intro)$
-$intro$
+$if(intrest)$
+\section* {Research interests}
+$intrest$
 $endif$
 
-\subsection*{Technical Skills}
+$if(education)$
+\section*{Education}
+\noindent
+$for(education)$
+\note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
+$endfor$
+$endif$
+
+\section*{Previous Experience}
+\noindent
+$for(experience)$
+\note{$experience.years$}\textsc{$experience.employer$}\\
+\emph{$experience.job$}\\
+$experience.city$\\[.2cm]
+$endfor$
+
+\section*{Technical Skills}
 $if(skills)$
 \begin{itemize}
     $for(skills)$
@@ -116,24 +139,15 @@ $endif$
 
 % \vfill
 
-\vspace{25pt}
+%\vspace{25pt}
 
-\section*{Previous Experience}
-\noindent
-$for(experience)$
-\note{$experience.years$}\textsc{$experience.employer$}\\
-\emph{$experience.job$}\\
-$experience.city$\\[.2cm]
-$endfor$
+%$if(publications)$
+\section*{Publications}
+\autocite{author00:_title}
+\printbibliography
+%$endif$
 
-$if(education)$
-\section*{Education}
-\noindent
-$for(education)$
-\note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
-\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
-$endfor$
-$endif$
+
 
 $if(languages)$
 \section*{Languages}

@@ -14,7 +14,7 @@ urls:
 
 # Sections
 
-intro: "I know my fate. One day my name will be associated with the memory of something tremendous --- a crisis without equal on earth, the most profound collision of conscience, a decision that was conjured up against everything that had been believed, demanded, hallowed so far. I am no man, I am dynamite."
+intrest: "I know my fate. One day my name will be associated with the memory of something tremendous --- a crisis without equal on earth, the most profound collision of conscience, a decision that was conjured up against everything that had been believed, demanded, hallowed so far. I am no man, I am dynamite."
 
 skills:
 - Aesthetics, Ethics, Metaphysics, Nihilism
@@ -46,9 +46,11 @@ education:
   institute: Schulpforta
   city: Naumburg
 
+publications: mypubs.bib
+
 # Settings
-mainfont: Hoefler Text
+mainfont: Times New Roman
 fontsize: 10pt
-lang: English
+#lang: English
 geometry: a4paper, left=35mm, right=35mm, top=51mm, bottom=17mm
 ---
