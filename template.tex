@@ -48,8 +48,10 @@ $endif$
 
 % BIBLIOGRAPHY
 %--------------------------------
-\usepackage[style=numeric]{biblatex}
-\bibliography{mypubs}
+$if(publications)$
+\usepackage[style=authoryear, backend=bibtex]{biblatex}
+\bibliography{$publications$}
+$endif$
 
 % HEADINGS
 %--------------------------------
@@ -141,12 +143,10 @@ $endif$
 
 %\vspace{25pt}
 
-%$if(publications)$
-\section*{Publications}
-\autocite{author00:_title}
-\printbibliography
-%$endif$
-
+$if(publications)$
+\nocite{*}
+\printbibliography[title={Publications}]
+$endif$
 
 
 $if(languages)$
