@@ -71,6 +71,17 @@ Although I didn't test it, you can probably use this on Windows, too. Both [Pand
 
     pandoc details.yml -o output.pdf --template=template.tex --latex-engine=xelatex
 
+## Running bibtex
+
+Rather than converting directly to a PDF, you need to convert to a .tex file first, run bibtex and then xelatex. For windows this looks like:
+
+    pandoc details.yml -o output.tex --template=template.tex
+    xelatex output.tex
+    bibtex output
+    xelatex output.tex
+
+This should give you a .pdf with references.
+
 ## Available settings
 
 - **`mainfont`**: Hoefler Text is the default, but every font installed on your system should work out of the box (thanks, XeTeX!)
